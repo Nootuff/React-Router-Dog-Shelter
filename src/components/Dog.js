@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import Dog from "./Dog";
+//import '../styles/ToDo.css';
 //import { showToggler } from "../HelperFunctions"
 
-class Dogs extends Component {
+class Dog extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -14,15 +14,13 @@ class Dogs extends Component {
   
   render() {
     
-const  allDogs = this.props.data.map(value => <Dog name={value.name} img={value.src}/>  )
-
     return (
       <div>
-      <h1>Click a dog to learn more!</h1>
-      {allDogs}
+          <a href=""><img alt={this.props.name} src={this.props.img} /></a>
+      <h1>{this.props.name}</h1>
       </div>
     )
   }
 }
 
-export default Dogs;
+export default Dog;
