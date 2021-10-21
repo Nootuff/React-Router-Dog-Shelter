@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import Dog from "./Dog";
+//import '../styles/ToDo.css';
 //import { showToggler } from "../HelperFunctions"
 
-class Dogs extends Component {
+class View extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -14,15 +14,12 @@ class Dogs extends Component {
   
   render() {
     
-const  allDogs = this.props.data.map(value => <Dog data={value} />  )
-
     return (
       <div>
-      <h1>Click a dog to learn more!</h1>
-      {allDogs}
+         <h1>Test</h1>
       </div>
     )
   }
 }
 
-export default Dogs;
+export default View;

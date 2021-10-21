@@ -3,7 +3,8 @@ import { Route, Switch, Link, NavLink } from "react-router-dom";
 import './styles/App.css';
 import Navbar from './components/Navbar';
 import Dogs from './components/Dogs';
-import Dog from './components/Dog';
+import View from './components/View';
+
 
 import whiskey from "./dogImgs/whiskey.jpg"
 import hazel from "./dogImgs/hazel.jpg"
@@ -57,8 +58,8 @@ class App extends React.Component  {
 
       <Switch>
         <Route exact path="/" render={() => <Dogs data={this.props.dogs} />} />
-        {/*<Route exact path="/food/:name" render={(routeProps) => < Food text="You ordered" {...routeProps} />} /> */}
-        <Route exact path="/dog" render={() => < Dog />} />
+       <Route exact path="/view/:name" render={(routeProps) => < View {...routeProps} data={this.props.dogs} />} />
+        {/*<Route exact path="/view" render={() => < View />} /> */}
 
 
       </Switch>
