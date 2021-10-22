@@ -15,7 +15,6 @@ class Dog extends Component {
   }
 
   render() {
-
     return (
       <div>
         <Link exact to={`/view/${this.props.data.name}`}>

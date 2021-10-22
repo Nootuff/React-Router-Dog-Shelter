@@ -13,10 +13,10 @@ class View extends Component {
   }
   
   render() {
-    
+    const name = this.props.match.params.name;
     return (
       <div>
-         <h1>Test</h1>
+         <h1>{name}</h1>
       </div>
     )
   }
