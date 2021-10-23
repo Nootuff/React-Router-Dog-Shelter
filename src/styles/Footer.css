@@ -1,0 +1,13 @@
+.Footer{
+    background-color: #282c34;
+   
+    padding: 1rem;
+    min-height: 7vh;
+text-align: left;
+    
+    text-align: center;
+  }
+
+  .Footer a{
+    color: white;
+  }

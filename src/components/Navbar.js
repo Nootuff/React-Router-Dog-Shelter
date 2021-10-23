@@ -1,18 +1,10 @@
 import React, { Component } from "react";
-import { Link, NavLink, withRouter } from "react-router-dom";
+import { NavLink, withRouter } from "react-router-dom";
 import '../styles/Navbar.css';
 
-class Navbar extends Component {
-    constructor(props) {
-        super(props);
-        this.state = { query: "" } //Apparently you have to do this for every input you put into React 
-        //this.handleLogin = this.handleLogin.bind(this);
-     
-    }
-
-   
+class Navbar extends Component {   
     render() {
-        const  allLinks= this.props.data.map(value => <NavLink exact activeClassName="active-NavLink" className="NavLink" to="/">Test </NavLink>  )
+        const  allLinks= this.props.data.map(value => <NavLink exact activeClassName="active-NavLink" className="NavLink" to={`/dogs/${value.name}`}>{value.name} </NavLink>  )
         return (
             <header className="Navbar">
                 <NavLink exact activeClassName="active-NavLink" className="NavLink" to="/">Home </NavLink>
@@ -23,4 +15,4 @@ class Navbar extends Component {
     }
 }
 
-export default withRouter(Navbar); //Notice this is different from the others, it has withRouter and this is what allows the redirect in handleLogin to work. 
+export default withRouter(Navbar);

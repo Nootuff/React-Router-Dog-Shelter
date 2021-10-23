@@ -1,10 +1,11 @@
 import React from "react"
-import { Route, Switch, Link, NavLink, Redirect } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import './styles/App.css';
-import Welcome from './components/Welcome';
+
 import Dogs from './components/Dogs';
 import View from './components/View';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 
 
 import whiskey from "./dogImgs/whiskey.jpg"
@@ -44,7 +45,17 @@ class App extends React.Component  {
           "Tubby does not like walks or exercise.",
           "Tubby loves eating food."
         ]
-      }
+      }, 
+      {
+        name: "Brutus",
+        age: 666,
+        src: hazel,
+        facts: [
+          "Cannibalistic",
+          "Brutus does not like light or hope.",
+          "Knows the date and time of your death."
+        ]
+      }, 
     ]
   }
 
@@ -56,15 +67,12 @@ class App extends React.Component  {
  <Navbar data={this.props.dogs} />
  
 
-      <Switch>
-       
+      <Switch> 
         <Route exact path="/" render={() => <Dogs data={this.props.dogs} />} />
-       <Route exact path="/view/:name" render={(routeProps) => < View {...routeProps} data={this.props.dogs} />} />
-       <Route exact render={()=> <h1>Page Not Found</h1>} />
-        {/*<Route exact path="/view" render={() => < View />} /> */}
-
-
+       <Route exact path="/dogs/:name" render={(routeProps) => < View {...routeProps} data={this.props.dogs} />} />
+       <Route  path="*"  render={()=> <h1>Page Not Found</h1>} />
       </Switch>
+      <Footer />
     </div>
   );
   }

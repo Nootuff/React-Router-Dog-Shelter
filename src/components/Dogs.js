@@ -1,25 +1,12 @@
 import React, { Component } from "react";
 import Dog from "./Dog";
-import Navbar from './Navbar';
-//import { showToggler } from "../HelperFunctions"
+//import '../styles/Dogs.css';
 
 class Dogs extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-
-    };
-
-    //this.done = this.done.bind(this);
-  }
-
   render() {
-
     const allDogs = this.props.data.map(value => <Dog data={value} />)
-
     return (
-      <div>
-
+      <div className="Dogs">
         <h1>Click a dog to learn more!</h1>
         {allDogs}
       </div>
