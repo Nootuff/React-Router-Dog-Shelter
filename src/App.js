@@ -1,9 +1,10 @@
 import React from "react"
-import { Route, Switch, Link, NavLink } from "react-router-dom";
+import { Route, Switch, Link, NavLink, Redirect } from "react-router-dom";
 import './styles/App.css';
-import Navbar from './components/Navbar';
+import Welcome from './components/Welcome';
 import Dogs from './components/Dogs';
 import View from './components/View';
+import Navbar from './components/Navbar';
 
 
 import whiskey from "./dogImgs/whiskey.jpg"
@@ -36,7 +37,7 @@ class App extends React.Component  {
       },
       {
         name: "Tubby",
-        age: 4,
+        age: 6,
         src: tubby,
         facts: [
           "Tubby is not the brightest dog",
@@ -50,15 +51,16 @@ class App extends React.Component  {
 
   render() {
   return (
-    <div className="App">
-      <Navbar />
-      {/*<p>{this.props.dogs[0].name}</p>
-<img src={this.props.dogs[0].src}/>*/}
-
+    <div className="App ">
+ 
+ <Navbar data={this.props.dogs} />
+ 
 
       <Switch>
+       
         <Route exact path="/" render={() => <Dogs data={this.props.dogs} />} />
        <Route exact path="/view/:name" render={(routeProps) => < View {...routeProps} data={this.props.dogs} />} />
+       <Route exact render={()=> <h1>Page Not Found</h1>} />
         {/*<Route exact path="/view" render={() => < View />} /> */}
 
 
@@ -69,3 +71,4 @@ class App extends React.Component  {
 }
 
 export default App;
+

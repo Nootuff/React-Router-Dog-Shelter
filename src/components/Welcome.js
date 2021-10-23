@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import Dog from "./Dog";
-import Navbar from './Navbar';
+import '../styles/Welcome.css';
 //import { showToggler } from "../HelperFunctions"
+import { Link } from "react-router-dom";
 
-class Dogs extends Component {
+class Welcome extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -14,17 +14,13 @@ class Dogs extends Component {
   }
 
   render() {
-
-    const allDogs = this.props.data.map(value => <Dog data={value} />)
-
+    
     return (
-      <div>
-
-        <h1>Click a dog to learn more!</h1>
-        {allDogs}
+      <div className="Welcome">
+        <Link exact to="/dogs" ><h1>Take me to the dogs!</h1> </Link>
       </div>
     )
   }
 }
 
-export default Dogs;
+export default Welcome;

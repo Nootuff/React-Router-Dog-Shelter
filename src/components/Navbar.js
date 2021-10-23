@@ -12,9 +12,12 @@ class Navbar extends Component {
 
    
     render() {
+        const  allLinks= this.props.data.map(value => <NavLink exact activeClassName="active-NavLink" className="NavLink" to="/">Test </NavLink>  )
         return (
             <header className="Navbar">
-                Test
+                <NavLink exact activeClassName="active-NavLink" className="NavLink" to="/">Home </NavLink>
+
+                {allLinks}
             </header>
         )
     }
