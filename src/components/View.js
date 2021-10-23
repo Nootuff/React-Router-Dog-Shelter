@@ -1,26 +1,27 @@
 import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
 import '../styles/View.css';
-import Navbar from './Navbar';
+
 //import { showToggler } from "../HelperFunctions"
 
 class View extends Component {
   constructor(props) {
     super(props);
-    this.state = {
+    
 
-    };
-
-    //this.done = this.done.bind(this);
+    this.handleBack = this.handleBack.bind(this);
   }
+
+
+handleBack() { 
+   this.props.history.goBack();
+}
 
   render() {
     const name = this.props.match.params.name;
     let imgHolder;
     let ageHolder;
     let factsHolder;
-
-    //console.log(this.props.data.dogs)
-
     for (let i = 0; i < this.props.data.length; i++) {
       if (this.props.data[i].name.toLowerCase() == name.toLowerCase()) {
         ageHolder = this.props.data[i].age;
@@ -31,16 +32,16 @@ class View extends Component {
     return (
       <div className="View">
         <img alt={this.props.data.name} src={imgHolder} />
-        <h1>Hi my name is {name}!</h1>
+        <h1 className="display-1">Hi my name is {name}!</h1>
         <p>I'm {ageHolder} years old!</p>
         <h2>Here's a few facts about me!</h2>
         <ul>
           {factsHolder.map(value => <li>{value}</li>)}
         </ul>
-
+<button onClick={this.handleBack}>Go Back</button>
       </div>
     )
   }
 }
 
-export default View;
+export default withRouter(View);

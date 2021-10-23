@@ -7,7 +7,7 @@ class Dogs extends Component {
     const allDogs = this.props.data.map(value => <Dog data={value} />)
     return (
       <div className="Dogs">
-        <h1>Click a dog to learn more!</h1>
+        <h1 className="display-1">Click a dog to learn more!</h1>
         {allDogs}
       </div>
     )

@@ -69,6 +69,7 @@ class App extends React.Component  {
 
       <Switch> 
         <Route exact path="/" render={() => <Dogs data={this.props.dogs} />} />
+        <Route exact path="/dogs" render={() => <h1>Dog list</h1>} />
        <Route exact path="/dogs/:name" render={(routeProps) => < View {...routeProps} data={this.props.dogs} />} />
        <Route  path="*"  render={()=> <h1>Page Not Found</h1>} />
       </Switch>
@@ -79,4 +80,5 @@ class App extends React.Component  {
 }
 
 export default App;
+
 
