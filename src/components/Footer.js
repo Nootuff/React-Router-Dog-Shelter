@@ -6,7 +6,7 @@ class Navbar extends Component {
        
         return (
             <footer className="Footer">
-               <p><a href="https://github.com/Nootuff" target="_blank">Created by Adam Walker</a></p>
+               <p><a href="https://github.com/Nootuff" target="_blank" rel="noreferrer">Created by Adam Walker</a></p>
             </footer>
         )
     }
